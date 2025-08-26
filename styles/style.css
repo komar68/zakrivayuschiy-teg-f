@@ -10,7 +10,323 @@
 
 */
 
+
+
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-size: 18px;
+  font-family: var(--main-font), sans-serif;
+  font-variation-settings: "wght" var(--font-weight-text); 
+  background-image: var(--page-background);
+  background-attachment: fixed;
+  overflow-x: hidden;
 }
+
+
+
+.container {
+  margin-inline: auto;
+  inline-size: var(--page-width);
+}
+
+.header {
+  padding: clamp(120px, 20%, 130px) clamp(16px, 4%, 122.5px);
+  text-align: center;
+  background-color: #fff;
+  margin-block: 97px;
+  font-family: var(--accent-font),serif;
+  border: 2px solid #000;
+}
+
+.header-title {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  font-weight: 400; 
+}
+
+.header-text {
+  padding-block-start: 20px;
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  font-weight: 400; 
+  text-transform: uppercase;
+}
+
+
+
+.cards-list {
+  display: grid;
+  gap: 52px;
+}
+
+.card {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  border: 2px solid #000;
+  padding-block-end: 26px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-variation-settings: "wght" 715;
+  padding: 5px 10px;
+}
+
+.card-container {
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  margin-block-start: -28px;
+  position: relative;
+}
+
+.card-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-text {
+  padding-inline: 25px;
+}
+
+.card-label {
+  font-family: var(--accent-font),serif;
+  font-size: 14px;
+  font-weight: 400;
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 1);
+}
+
+@supports (text-stroke: 1px rgba(255, 255, 255, 1)) {
+  .card-label {
+    text-stroke: 1px rgba(255, 255, 255, 1);
+  }
+}
+
+.card__icon-button {
+  padding: 0;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+  background-color: transparent;
+}
+
+.card__button-container {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  padding-inline-end: 25px;
+}
+
+
+
+
+.button__text {
+  font-family: var(--accent-font), sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
+  position: relative;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 10px 35px;
+  border: 2px solid #000;
+  transition: 0.3s ease;
+}
+
+
+
+.save-button__container {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding-block-end: 100px;
+}
+
+.save__button {
+  border: 2px  solid #000;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  inline-size: 335px;
+  block-size: 55px;  
+  transition: 0.3s ease;
+}
+
+.blur {
+  filter: blur(3px);
+}
+
+.brightness {
+  filter: brightness(10%);
+}
+
+.contrast {
+  filter: contrast(500%);
+}
+
+.drop-shadow {
+  fill: drop-shadow(5px 5px red);
+}
+.grayscale {
+  filter: grayscale(80%);
+}
+
+.hue-rotate {
+  filter: hue-rotate(180deg);
+}
+
+.invert-opacity {
+  filter: invert(100%), opacity(40%);
+}
+
+.modal {
+  padding: 0;
+  border: 2px solid #000;
+  max-width: 353px;
+  min-height: 191px;
+}
+
+.modal::backdrop {
+  background-color: #000;
+  opacity: 0.75;
+}
+
+.modal__content {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 30px;
+}
+
+.modal__container {
+  display: flex;
+  align-items: center;
+  font-family: var(--accent-font), sans-serif;
+  font-weight: 400;
+  gap: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.dialog__image {
+  align-items: center;
+  flex-shrink: 0;
+  width: 39px;
+  height: 39px;
+}
+
+.dialog__image use {
+  transform: scale(1.8); 
+}
+
+.dialog__button {
+  font-family: var(--accent-font), sans-serif;
+  border: 2px solid #000;
+  font-size: 14px;
+  justify-content: center;
+  margin: 0;
+  inline-size: 293px;
+  block-size: 38px;
+  transition: 0.3s ease;
+}
+
+.dialog__text {
+  text-transform: uppercase;
+}
+
+
+/* анимации */
+
+/* focus */
+.dialog__button:focus,
+.save__button:focus,
+.card__icon-button:focus {
+  outline: none;
+}
+
+.dialog__button:focus,
+.save__button:focus,
+.card__icon-button:focus .button__text  {
+  box-shadow: 2px 2px 0 0 var(--accent-color);
+}
+
+/* hover */
+
+
+.dialog__button,
+.save__button,
+.button__like{
+  position: relative;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: 0.5s ease-in-out;
+}
+
+.dialog__button::after,
+.save__button::after,
+.button__like::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  mix-blend-mode: difference;
+  transform: scaleX(0);
+  transition: 0.5s ease-in-out ;
+  transform-origin: left;
+}
+
+.dialog__button:hover:after,
+.save__button:hover::after,
+.button__like:hover::after {
+  transform: scaleX(1);
+}
+
+
+/* Фокус на кнопке с сердцем */
+
+.card__icon-button :focus {
+  border: none;
+}
+
+.card__icon-button :focus-visible svg {
+  border: 2px solid #000;
+}
+
+
+
+@media (width <= 375px) {
+  .header {
+    margin-block: 100px;
+  }
+
+  .cards-list {
+    gap: 48px;
+  }
+
+  .card {
+    gap: 25px;
+    padding-block-end: 25px;
+  }
+
+  .save__button {
+    flex-direction: column;
+    gap: 10px;
+    inline-size: 310px;
+    block-size: 83px;
+  }
+
+  .floppy_img {
+    width: 28px;
+    height: 28px;
+  }
+}
+

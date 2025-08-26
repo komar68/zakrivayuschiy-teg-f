@@ -1,1 +1,31 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --main-font: 'Inter';
+  --accent-font: 'PressStart2P-Regular';
+  --font-weight-text: 410;
+  --font-weight-title: 715;
+  --page-width: clamp(375px, 80%, 700px);
+  --accent-color: rgba(0, 0, 0, 1);
+  --page-background:  
+    repeating-linear-gradient(
+    to right,
+    #d3d3d3 0px,
+    transparent 2px,
+    transparent 4px
+    ),
+    repeating-linear-gradient(
+        to bottom,
+        #d3d3d3 0px,
+        transparent 2px,
+        transparent 4px
+    ),
+    linear-gradient(
+      to bottom,
+      #e7e7e7 0.01%, 
+      #1a1a1a 100%
+    )
+    ;
+    --text-color: #000;
+    --background-color: #fff;
+    
+}
