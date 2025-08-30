@@ -1,1 +1,0 @@
-https://github.com/komar68/zakrivayuschiy-teg-f
